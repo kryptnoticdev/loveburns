@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Love Burns | $LOVEBURNS</title>
+    
+    <meta property="og:title" content="LOVEBURNS | $BURNS">
+    <meta property="og:description" content="Heartbreak is temporary, $BURNS last forever!">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <meta name="twitter:title" content="Love Burns| $LOVEBURNS">
+    <meta name="twitter:description" content="Heartbreak is temporary, $BURNS last forever!">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-gold: #FFC107; /* Or */
+            --super-blue: #000000;
+            --super-red: #D90429;
+            --dark-bg: #0b1116;
+            --glass-panel: rgba(0, 0, 0, 0.75);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            margin: 0; 
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+background-color: #000000; 
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* --- HERO SECTION (CORRECTIF PC INCLUS) --- */
+        .hero-section {
+            margin: 0; padding: 0;
+
+
+            height: 100vh;
+            width: 100%;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;  /* Prevents video overflow */
+        }
+
+        /* Video styles - acts like background */
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            transform: translate(-50%, -50%);
+            object-fit: cover;  /* Covers the area like background-size: cover */
+            z-index: -2;  /* Behind overlay and content */
+        }
+
+        /* --- LE CORRECTIF PC EST ICI --- */
+        /* Si l'écran est large (PC/Tablette), on ajuste le positionnement si nécessaire */
+       @media (min-width: 1024px) {
+    .hero-video {
+        object-position: center 25%;  /* matches your old background-position */
+    }
+}
+
+        /* Ombre pour lisibilité */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(11,17,22,1) 95%);
+    z-index: -1;
+}
+
+/* Content on top */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+        /* LOGO TYPE */
+        .main-title {
+            font-size: 4rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            line-height: 0.9;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+        .main-title span { color: var(--primary-gold); }
+
+        /* MENU BOX */
+        .menu-box {
+            background: var(--glass-panel);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .menu-link {
+            color: var(--primary-gold);
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .menu-link:hover { color: white; letter-spacing: 2px; }
+
+        /* --- CONTENT SECTION --- */
+        .content-section {
+            background-color: var(--dark-bg);
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .text-block {
+            color: #a0a0a0;
+            font-size: 1rem;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .highlight { color: var(--primary-gold); font-weight: bold; }
+
+        /* BUTTONS */
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary-gold);
+            color: #000;
+            padding: 15px 40px;
+            border-radius: 8px;
+            font-weight: 800;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1rem;
+            box-shadow: 0 4px 20px rgba(255, 193, 7, 0.3);
+            transition: transform 0.2s;
+        }
+        .cta-btn:hover { transform: scale(1.05); background-color: white; }
+
+        .x-btn {
+            background-color: #000;
+            color: white;
+            border: 2px solid #333;
+        }
+        .x-btn:hover { border-color: white; background-color: #111; }
+
+        /* IMAGE INSERTS */
+        .feature-img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 12px;
+            margin: 20px auto;
+            display: block;
+            border: 1px solid #333;
+        }
+
+        /* --- CONTRACT SECTION (Footer) --- */
+        .contract-section {
+            background: linear-gradient(180deg, var(--dark-bg) 0%, #000000 100%);
+            padding: 60px 20px 100px;
+            text-align: center;
+            border-top: 1px solid #333;
+        }
+
+        .ca-box {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 10px;
+            border: 1px solid var(--primary-gold);
+            display: inline-block;
+            margin-top: 20px;
+            cursor: pointer;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .ca-text {
+            font-family: monospace;
+            color: var(--primary-gold);
+            font-size: 0.9rem;
+            word-break: break-all;
+        }
+        .ca-label { font-size: 0.8rem; color: #666; display: block; margin-bottom: 5px; }
+
+        /* TOAST */
+        #toast {
+            visibility: hidden;
+            background-color: var(--primary-gold);
+            color: black;
+            font-weight: 800;
+            padding: 15px 30px;
+            border-radius: 50px;
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+        #toast.show { visibility: visible; animation: fadein 0.5s, fadeout 0.5s 2.5s; }
+
+.audio-block {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid rgba(255,255,255, 0.1);  /* Light border for visibility on dark bg */
+    background: #000000;  /* Pure black */
+}
+
+.audio-title {
+    font-weight: 800;
+    margin-bottom: 8px;
+    color: #ffffff;  /* White text */
+}
+
+.audio-note {
+    margin-top: 8px;
+    font-size: 12px;
+    color: rgba(255,255,255, 0.55);
+}
+
+audio {
+    width: 50%;
+}
+        
+        @keyframes fadein { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+        @keyframes fadeout { from {bottom: 30px; opacity: 1;} to {bottom: 0; opacity: 0;} }
+        
+        #terminal {
+    background-color: #000;
+    color: #0f0;
+    font-family: monospace;
+    padding: 12px;
+    height: 300px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid #333;
+
+    max-width: 600px;   /* <-- max width */
+    width: 90%;         /* <-- responsive width */
+    margin: 20px auto;  /* <-- centers it horizontally */
+    text-align: left;   /* <-- left-align text */
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="hero-section">
+        <!-- Video as background -->
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="hero.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="main-title">Love<br><span>Burns</span></h1>
+            
+            <div class="menu-box">
+                <a href="#about" class="menu-link">MISSION</a>
+                <a href="#tokenomics" class="menu-link">CONTRACT</a>
+                <a href="https://pump.fun/" target="_blank" class="menu-link">BUY ON PUMP.FUN</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="about" class="content-section">
+        <h2 class="section-title">$LOVEBURNS</h2>
+        <p class="text-block">
+            Heartbreak is temporary,
+            <span class="highlight">BURNS</span> are forever!
+        </p>
+        <img src="mid.png" alt="LoveBurns Logo" class="feature-img">
+        <br><br>
+        <a href="https://x.com/i/communities/2019239789824786934" target="_blank" class="cta-btn x-btn">JOIN X COMMUNITY</a>
+        <a href="https://t.me/LOVEBURNSSOL" target="_blank" class="cta-btn x-btn">JOIN TELEGRAM COMMUNITY</a>
+    </div>
+
+    <div class="content-section">
+      <h2 class="section-title">LIVE BUYBACK AND BURN</h2>
+      <div id="terminal"></div>
+
+      <p class="text-block">
+            The $LOVEBURNS burn tech will complete a
+            <span class="highlight">BUY BACK AND BURN</span> every 3 minutes!
+        </p>
+      
+      <div class="audio-block">
+        <div class="audio-title">🔥 LOVE BURNS Anthem</div>
+        <audio 
+          id="anthem" 
+          controls 
+          preload="metadata" 
+          autoplay 
+          loop
+        >
+          <source src="assets/LOVEBURNS.mp3" type="audio/mpeg" />
+          Din webbläsare stödjer inte audio-taggen.
+        </audio>
+        <div class="audio-note">
+          Anthem attempts to play automatically with sound. If blocked by your browser, interact with the page (e.g., click or scroll) to start! 💔🔥
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="tokenomics" class="contract-section">
+        <img src="join.jpg" alt="LoveBurns Join" style="width: 100px; margin-bottom: 20px;">
+        <h2 class="section-title">JOIN THE $LOVEBURNS</h2>
+        <p class="text-block">
+            <br>Copy the Contract Address below.
+        </p>
+
+        <div class="ca-box" onclick="copyContract()">
+            <span class="ca-label">CLICK TO COPY</span>
+            <span class="ca-text">ComingSoon</span>
+        </div>
+        
+        <p style="margin-top: 50px; font-size: 0.7rem; color: #444;">
+            $LOVEBURNS is a meme coin with no intrinsic value. 
+            Entertainment purposes only.
+        </p>
+    </div>
+
+    <div id="toast">COPIED CA! 🚀</div>
+
+    <script>
+        function copyContract() {
+            navigator.clipboard.writeText("ComingSoon");
+            var t = document.getElementById("toast");
+            t.className = "show";
+            setTimeout(function(){ t.className = t.className.replace("show", ""); }, 3000);
+        }
+    </script>
+
+    <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const terminal = document.getElementById("terminal");
+  if (!terminal) return;
+
+  const log = (msg, color = "#0f0") => {
+    const line = document.createElement("div");
+    line.style.color = color;
+    line.textContent = msg;
+    terminal.appendChild(line);
+    terminal.scrollTop = terminal.scrollHeight;
+  };
+
+ log("[WEB] Terminal loaded", "#0ff");
+
+  function connect() {
+    log("[WS] Connecting...", "#ffaa00");
+
+    const ws = new WebSocket(
+      "wss://loveburns.ngrok.app"
+    );
+
+    ws.onopen = () => log("[WS] Connected", "#00ff88");
+
+    ws.onmessage = (event) => {
+      log(event.data);
+    };
+
+    ws.onerror = () => {
+      log("[WS] Error", "#ff4444");
+    };
+
+    ws.onclose = () => {
+      log("[WS] Disconnected — reconnecting in 3s", "#ffaa00");
+      setTimeout(connect, 3000);
+    };
+  }
+
+  connect();
+});
+</script>
+ <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const audio = document.getElementById("anthem");
+        if (audio) {
+          // Attempt unmuted autoplay (will likely be blocked)
+          const playPromise = audio.play();
+          if (playPromise !== undefined) {
+            playPromise.then(() => {
+              console.log("Autoplay with sound started successfully!");
+            }).catch(err => {
+              console.log("Autoplay blocked:", err);
+              // Fallback: Play on first user interaction
+              const playOnInteract = () => {
+                audio.play().then(() => {
+                  console.log("Played on user interaction!");
+                  // Remove listeners after success
+                  document.removeEventListener("click", playOnInteract);
+                  document.removeEventListener("touchstart", playOnInteract);
+                  document.removeEventListener("mousemove", playOnInteract);
+                }).catch(innerErr => console.log("Still blocked:", innerErr));
+              };
+              document.addEventListener("click", playOnInteract);
+              document.addEventListener("touchstart", playOnInteract); // For mobile
+              document.addEventListener("mousemove", playOnInteract); // For desktop hover/move
+            });
+          }
+        }
+      });
+    </script>
+
+
+</body>
+</html>
